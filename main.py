@@ -24,11 +24,14 @@ def index():
 @app.route(f"/{TELEGRAM_TOKEN}", methods=['POST'])
 def telegram_webhook():
     update = request.get_json(force=True)
+    print(f"Received update: {update}") # 로그에 메시지 내용이 찍힘
+    
     if "message" in update and "text" in update["message"]:
         chat_id = update["message"]["chat"]["id"]
         user_text = update["message"]["text"]
         reply = get_gemini_response(user_text)
         bot.send_message(chat_id=chat_id, text=reply) # 동기식 호출로 변경하여 충돌 방지
+        print("Processing message...") # 처리 중인지 로그 확인
     return "ok", 200
 
 if __name__ == "__main__":
