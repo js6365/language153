@@ -28,7 +28,7 @@ print("--- [디버깅] 모델 목록 확인 끝 ---")
     
 def get_gemini_response(user_text):
     # 인지 동사 우선 원칙 적용
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-1.5-flash-002')
     response = model.generate_content(f"당신은 학원 원장님입니다. 강의 문의에 친절하게 답변해주세요: {user_text}")
     return response.text
 
