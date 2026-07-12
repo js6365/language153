@@ -13,7 +13,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 bot = Bot(token=TELEGRAM_TOKEN)
 
 def get_gemini_response(user_text):
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
     response = model.generate_content(f"당신은 학원 원장님입니다. 강의 문의에 친절하게 답변해주세요: {user_text}")
     return response.text
 
