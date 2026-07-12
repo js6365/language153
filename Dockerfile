@@ -16,3 +16,5 @@ ENV PORT 8080
 
 # 봇(Flask 서버)을 실행하는 명령어
 CMD ["python", "main.py"]
+
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
