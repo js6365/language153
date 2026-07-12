@@ -31,3 +31,8 @@ if __name__ == '__main__':
     application.add_handler(msg_handler)
     
     application.run_polling()
+
+if __name__ == "__main__":
+    # 환경 변수에서 PORT를 가져오되, 없으면 8080을 사용
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
