@@ -4,8 +4,8 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 import google.generativeai as genai
 
 # 1. 설정 (보안을 위해 환경변수 사용 권장)
-TELEGRAM_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
-GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY'
+TELEGRAM_TOKEN = '8852406644:AAHwoncCUAT6yjvhiOeleO6Q837rDeqhBoU'
+GEMINI_API_KEY = 'AIzaSyAAB_81wnm6Jx5TPB2bPJqnbI0YwK_yhdc'
 
 genai.configure(api_key=GEMINI_API_KEY)
 
