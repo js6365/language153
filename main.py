@@ -12,6 +12,10 @@ GEMINI_API_KEY = 'AIzaSyAAB_81wnm6Jx5TPB2bPJqnbI0YwK_yhdc'
 genai.configure(api_key=GEMINI_API_KEY)
 bot = Bot(token=TELEGRAM_TOKEN)
 
+# 사용 가능한 모델 목록을 로그로 출력하여 확인합니다.
+for m in genai.list_models():
+    print(f"사용 가능한 모델명: {m.name}")
+    
 def get_gemini_response(user_text):
     model = genai.GenerativeModel('gemini-1.5-flash')
     response = model.generate_content(f"당신은 학원 원장님입니다. 강의 문의에 친절하게 답변해주세요: {user_text}")
