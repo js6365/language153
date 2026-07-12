@@ -1,4 +1,18 @@
+# main.py 파일 내용
 import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Bot is running", 200
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
+    
+""" import os
 import logging
 from flask import Flask, request # 웹 서버를 위해 Flask 추가
 from telegram import Update
@@ -39,4 +53,4 @@ if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8080))
     
     # 3. Flask 서버 실행
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=port)"""
