@@ -13,3 +13,7 @@ COPY . .
 
 # 봇을 실행하는 명령어를 지정합니다 (main.py 대신 실제 실행 파일명을 쓰세요)
 CMD ["python", "main.py"]
+
+ENV PORT 8080
+
+CMD ["python", "main.py", "--host", "0.0.0.0", "--port", "8080"]
