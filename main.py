@@ -1,4 +1,17 @@
 import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def index():
+    return "Server is working!", 200
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
+    
+""" import os
 import asyncio
 from flask import Flask, request
 from telegram import Bot
@@ -45,4 +58,4 @@ def telegram_webhook():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=port)"""
